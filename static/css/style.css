@@ -1,0 +1,243 @@
+:root {
+    --primary: #00a8ff;
+    --secondary: #0c2461;
+    --accent: #4bcffa;
+    --dark: #1e272e;
+    --terminal: #0aff0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark);
+    color: #fff;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/bg-matrix.gif') center/cover;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--primary);
+}
+
+.logo {
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
+}
+
+.voice-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+#voice-btn {
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 168, 255, 0.5);
+    transition: all 0.3s;
+}
+
+#voice-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 168, 255, 0.8);
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 168, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 168, 255, 0); }
+}
+
+#voice-wave {
+    position: absolute;
+    bottom: 80px;
+    right: -70px;
+    width: 200px;
+    display: none;
+}
+
+.scanner-panel, .cert-panel {
+    background: rgba(12, 36, 97, 0.8);
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.tool-select {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tool-select label {
+    background: rgba(0, 40, 85, 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tool-select label:hover {
+    background: rgba(0, 80, 120, 0.9);
+    transform: translateY(-3px);
+}
+
+.target-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.target-input input {
+    flex: 1;
+    padding: 15px;
+    background: rgba(0, 20, 40, 0.8);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #0097e6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.results {
+    background: rgba(0, 10, 20, 0.9);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#status {
+    color: var(--terminal);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+#output {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--terminal);
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+}
+
+.cert-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.cert-form input {
+    padding: 15px;
+    background: rgba(0, 20, 40, 0.8);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    color: white;
+}
+
+#cert-btn {
+    grid-column: span 2;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid var(--primary);
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Terminal cursor effect */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.typing::after {
+    content: "|";
+    animation: blink 1s infinite;
+    color: var(--terminal);
+}

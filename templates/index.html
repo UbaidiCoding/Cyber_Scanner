@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Scanner | Ubaidi IT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/cyber-scanner/static/css/style.css">
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <div class="container">
+        <header>
+            <img src="cyber-scanner/static/images/logo.png" alt="Ubaidi IT" class="logo">
+            <h1>Ethical <span>Cyber</span> Scanner</h1>
+            <div class="voice-control">
+                <button id="voice-btn" class="pulse">🎤<span>Voice</span></button>
+                <img src="/static/images/voice-wave.gif" id="voice-wave" class="hidden">
+            </div>
+        </header>
+
+        <div class="scanner-panel">
+            <div class="tool-select">
+                <label><input type="checkbox" name="tool" value="nmap" checked> Nmap</label>
+                <label><input type="checkbox" name="tool" value="sublist3r"> Sublist3r</label>
+                <label><input type="checkbox" name="tool" value="nikto"> Nikto</label>
+                <label><input type="checkbox" name="tool" value="whois"> WHOIS</label>
+            </div>
+            
+            <div class="target-input">
+                <input type="text" id="target" placeholder="Enter target domain/IP" value="example.com">
+                <button id="scan-btn">Scan Target</button>
+            </div>
+            
+            <div class="results">
+                <h3>Scan Results <span id="status">(Ready)</span></h3>
+                <pre id="output">> System initialized\n> Select tools and enter target</pre>
+            </div>
+        </div>
+
+        <div class="cert-panel">
+            <h2>Certificate Generator</h2>
+            <div class="cert-form">
+                <input type="text" id="cert-name" value="Samiullah Samejo">
+                <input type="text" id="cert-identity" value="Samiubaidi, Ubaidi IT Community">
+                <input type="text" id="cert-course" value="Google Cybersecurity">
+                <button id="cert-btn">Generate PDF</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>This certifies a scan was ethically performed under student project.</p>
+        </footer>
+    </div>
+    <script src="cyber-scanner/static/js/script.js"></script>
+</body>
+</html>

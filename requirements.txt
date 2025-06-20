@@ -1,0 +1,7 @@
+flask==3.0.0
+python-nmap==0.7.1
+sublist3r==1.0.5
+fpdf2==2.7.6
+pandas==2.1.0
+gunicorn==21.2.0
+whois==0.9.5
